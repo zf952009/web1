@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>原生ajax</title>
+</head>
+<body>
+<input type="text" id="text" >
+
+<button type="button" value="异步访问服务器" id="b1" onclick="fn1()">异步访问服务器</button>
+<div id="div1"></div>
+
+<script>
+    function fn1(){
+        //创建ajax引擎对象
+        var xmlhttp = new XMLHttpRequest();
+
+        //绑定监听------监听服务器是否返回相应的数据
+        xmlhttp.onreadystatechange = function () {
+            //接受数据
+            if (xmlhttp.status==200&&xmlhttp.readyState==4){
+
+                var res = xmlhttp.responseText;
+                document.getElementById("div1").innerHTML=res;
+                alert(res);
+            }
+        }
+        //绑定地址
+        xmlhttp.open("GET","/JavaWeb/ajaxServlet",true);
+        var text = document.getElementById("text").nodeValue;
+        alert(text);
+
+        //发送请求
+        xmlhttp.send();
+
+
+    }
+
+
+</script>
+</body>
+</html>

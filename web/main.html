@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main">
+    zoufang
+</div>
+<input type="text" id="name">
+<script>
+    var para = document.createElement("p");
+    var node = document.createTextNode("这是一个新的段落。");
+    para.appendChild(node);
+
+    var element = document.getElementById("main");
+    for (var i=10;i<=10;i++){
+
+        var child = document.getElementById("p"+i);
+        element.insertBefore(para,child);
+    }
+</script>
+</body>
+</html>

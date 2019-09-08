@@ -1,0 +1,28 @@
+<meta charset="utf-8" />
+<meta name="author" content="DeathGhost" />
+
+<ul class="layui-nav">
+    <li class="layui-nav-item layui-hide-xs" lay-unselect style="margin-left: 1000px;">
+        <a href="javascript:;" target="mainFrame">个人中心</a>
+    </li>
+    <li class="layui-nav-item" lay-unselect="">
+        <a href="javascript:;" target="_blank"><span>&nbsp;&nbsp;name&nbsp;&nbsp;</span></a>
+    </li>
+    <li class="layui-nav-item" lay-unselect="">
+        <a href="userecit.html" target="_parent"><span>&nbsp;&nbsp;退出&nbsp;&nbsp;</span></a>
+    </li>
+</ul>
+
+<link rel="stylesheet" type="text/css" href="public/css/layui.css" />
+<script src="public/layui.all.js"></script>
+<script>
+    layui.use('element', function() {
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem) {
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
